@@ -1,0 +1,17 @@
+@import "./globals.css";
+
+:root {
+  --font-inter: "Inter Variable";
+}
+
+/* Hide scrollbars everywhere. Content still scrolls with the wheel, trackpad,
+ * touch and keyboard; only the bar itself is not drawn. */
+html,
+body,
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+

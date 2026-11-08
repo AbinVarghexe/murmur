@@ -1,0 +1,15 @@
+{
+  "tag": "v2.0.1",
+  "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/{tag}/{archive}",
+  "targets": {
+    "x86_64-pc-windows-msvc": {
+      "dynamic": "sherpa-onnx-{tag}-win-x64-shared-MD-Release-no-tts.tar.bz2"
+    },
+    "aarch64-apple-darwin": {
+      "dynamic": "sherpa-onnx-{tag}-osx-universal2-shared-no-tts.tar.bz2"
+    },
+    "x86_64-apple-darwin": {
+      "dynamic": "sherpa-onnx-{tag}-osx-universal2-shared-no-tts.tar.bz2"
+    }
+  }
+}

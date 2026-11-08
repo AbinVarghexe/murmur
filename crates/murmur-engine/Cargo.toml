@@ -1,0 +1,12 @@
+[package]
+name = "murmur-engine"
+version = "2.0.0"
+edition = "2021"
+description = "The offline speech engine: sherpa-onnx running the Parakeet model."
+publish = false
+links = "murmur_engine"
+
+[dependencies]
+murmur-core = { path = "../murmur-core" }
+# Raw sherpa-onnx v2.0.1 bindings (text-to-speech is not included).
+murmur-sherpa-sys = { path = "../sherpa-sys" }

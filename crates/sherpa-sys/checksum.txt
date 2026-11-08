@@ -1,0 +1,2 @@
+sherpa-onnx-v2.0.1-win-x64-shared-MD-Release-no-tts.tar.bz2	11fd6a50b97eed38b54fb16d8219f49b16aa7f6a8e43a042316469ef47652e82
+sherpa-onnx-v2.0.1-osx-universal2-shared-no-tts.tar.bz2	9021b6f33e8d1657fe5ae7a13e83fc948707f86b749dc7b775680db6451cc2b8

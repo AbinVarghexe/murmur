@@ -1,0 +1,15 @@
+# Dependencies & Build Outputs
+node_modules/
+dist/
+release/
+target/
+.build/
+
+# Editor & Tooling
+.cursor/
+.claude/
+*.log
+
+# Tauri native cache
+src-tauri/libs/
+src-tauri/gen/

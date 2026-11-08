@@ -1,0 +1,14 @@
+@import "./beautifui/foundation.css";
+
+/* The pill window is transparent: only the card itself is drawn. */
+html,
+body,
+#root {
+  background: transparent !important;
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+  font-family: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}

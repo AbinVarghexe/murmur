@@ -1,0 +1,54 @@
+name: Build Murmur
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            args: ""
+          - os: macos-latest
+            args: "--target universal-apple-darwin"
+    runs-on: ${{ matrix.os }}
+    env:
+      # Needed by the speech-engine bindings; LLVM is preinstalled on the Windows runner.
+      LIBCLANG_PATH: ${{ matrix.os == 'windows-latest' && 'C:\Program Files\LLVM\bin' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.os == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - uses: Swatinem/rust-cache@v2
+
+      - run: npm ci
+
+      - name: Test the interface logic
+        run: npm test
+
+      - name: Test the Rust code
+        run: cargo test --workspace
+
+      - name: Build the installer
+        run: npm run tauri -- build ${{ matrix.args }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: murmur-${{ matrix.os }}
+          path: |
+            target/**/release/bundle/nsis/*.exe
+            target/**/release/bundle/dmg/*.dmg
+          if-no-files-found: error

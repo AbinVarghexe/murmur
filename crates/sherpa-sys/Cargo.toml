@@ -1,0 +1,33 @@
+[package]
+name = "murmur-sherpa-sys"
+version = "2.0.1"
+edition = "2021"
+license = "MIT"
+description = "Raw bindings to the sherpa-onnx C API, pinned to sherpa-onnx v2.0.1. Adapted from sherpa-rs-sys 0.6.8."
+publish = false
+links = "sherpa_onnx"
+
+[build-dependencies]
+bindgen = "0.69.4"
+cmake = "0.1"
+glob = "0.3.1"
+lazy_static = { version = "1.5.0" }
+
+# Download and verify the prebuilt libraries.
+ureq = { version = "2.1", optional = true, default-features = false, features = ["tls", "socks-proxy"] }
+tar = { version = "0.4", optional = true }
+bzip2 = { version = "0.4.4", optional = true, features = ["static"] }
+flate2 = { version = "1.0", optional = true }
+sha2 = { version = "0.10", optional = true }
+dirs = { version = "5.0.1", optional = true }
+serde_json = { version = "1.0.134", optional = true }
+serde = { version = "1.0.216", features = ["derive"], optional = true }
+
+[features]
+default = ["download-binaries"]
+download-binaries = ["dep:ureq", "dep:tar", "dep:bzip2", "dep:flate2", "dep:sha2", "dep:dirs", "dep:serde_json", "dep:serde"]
+# The build script reads these; they are unused here but must stay declared.
+static = []
+tts = []
+cuda = []
+directml = []

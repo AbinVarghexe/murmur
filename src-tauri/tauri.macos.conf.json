@@ -1,0 +1,10 @@
+{
+  "bundle": {
+    "macOS": {
+      "frameworks": [
+        "libs/libsherpa-onnx-c-api.dylib",
+        "libs/libonnxruntime.dylib"
+      ]
+    }
+  }
+}

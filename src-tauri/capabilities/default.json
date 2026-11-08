@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "What the settings and pill windows may do. Everything else goes through Murmur's own commands.",
+  "windows": ["settings", "pill"],
+  "permissions": ["core:default", "core:event:default"]
+}

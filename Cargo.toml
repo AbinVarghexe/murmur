@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["crates/murmur-core", "crates/murmur-engine", "crates/sherpa-sys", "src-tauri"]
+
+# Small, fast release binaries. The app is mostly waiting on the user, so size
+# matters more than the last drop of speed.
+[profile.release]
+opt-level = "s"
+lto = "thin"
+codegen-units = 1
+strip = true
+panic = "abort"
