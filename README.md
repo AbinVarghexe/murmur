@@ -5,6 +5,7 @@
 <p align="center">
   <a href="https://github.com/AbinVarghexe/murmur/releases"><img src="https://img.shields.io/github/v/release/AbinVarghexe/murmur?color=38BDF8&label=Release&style=flat-square" alt="Release" /></a>
   <a href="https://github.com/AbinVarghexe/murmur/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License" /></a>
+  <a href="https://github.com/sponsors/AbinVarghexe"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?style=flat-square" alt="Sponsor" /></a>
   <img src="https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-blue?style=flat-square" alt="Platform" />
   <img src="https://img.shields.io/badge/Engine-Sherpa--ONNX%20(Parakeet%200.6B)-indigo?style=flat-square" alt="Speech Engine" />
   <img src="https://img.shields.io/badge/Privacy-100%25%20On--Device-success?style=flat-square" alt="Privacy" />
